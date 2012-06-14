@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="FJ Related Layout" default="copy_all" basedir=".">
+	<property name="src" value="." />
+	<property name="test" value="../fj_test_16" />
+	<target name="copy_all" description="Copies files from test project.">
+		<echo message="Copying FJ Related Layout files from test to dev..." />
+		<copy file="${test}/administrator/components/com_fjrelated/fields/fjarticle.php"
+					todir="${src}/admin/fields/" />
+		<copy file="${test}/administrator/components/com_fjrelated/fields/index.html"
+							todir="${src}/admin/fields/" />
+		<copy file="${test}/administrator/components/com_fjrelated/language/en-GB/en-GB.com_fjrelated.ini"
+					todir="${src}/admin/language/en-GB/" />
+		<copy file="${test}/administrator/components/com_fjrelated/language/en-GB/en-GB.com_fjrelated.sys.ini"
+					todir="${src}/admin/language/en-GB/" />					
+		<copy file="${test}/administrator/components/com_fjrelated/fjrelated.php"
+			todir="${src}/admin/" />
+		<copy file="${test}/administrator/components/com_fjrelated/fjrelated.xml"
+			todir="${src}" />
+		<copy file="${test}/administrator/components/com_fjrelated/index.html"
+			todir="${src}/admin/" />
+
+		<copy todir="${src}/site" overwrite="true">
+			<fileset dir="${test}/components/com_fjrelated">
+				<include name="helpers/*.*" />
+				<include name="models/*.*" />
+				<include name="language/*.*" />
+				<include name="language/en-GB/*.*" />
+				<include name="views/fjrelated/tmpl/*.*" />
+				<include name="views/fjrelated/*.*" />
+				<include name="views/*.*" />
+				<include name="*.*" />
+			</fileset>
+		</copy>
+
+	</target>
+</project>

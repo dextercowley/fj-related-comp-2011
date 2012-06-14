@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="FJ Related Layout" basedir="." default="create_zip">
+
+	<property name="src" value="${project.basedir}" override="true" />
+	<fileset dir="${src}" id="allfiles">
+		<include name="admin/*.*" />
+		<include name="admin/*/*.*" />
+		<include name="admin/*/*/*.*" />
+		<include name="language/*/*.*" />
+		<include name="site/*/*.*" />
+		<include name="site/*/*/*/*.*" />
+		<include name="site/*/*/*.*" />
+		<include name="site/*.*" />
+		<include name="fjrelated.xml" />
+	</fileset>
+
+	<!-- Archive Target -->
+	<target name="create_zip" description="create zip archives">
+		<echo>Running create_zip.xml. Creating zip and gz archives for FJ Related Layout...
+		</echo>
+		<delete file="${src}/com_fjrelated_dev.zip" />
+		<zip destfile="${src}/com_fjrelated_dev.zip">
+			<fileset refid="allfiles" />
+		</zip>
+		<tar destfile="${src}/com_fjrelated_dev.tar.gz" compression="gzip">
+			<fileset refid="allfiles" />
+		</tar>
+	</target>
+</project>

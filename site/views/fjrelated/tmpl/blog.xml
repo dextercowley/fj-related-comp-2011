@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="utf-8"?>
+<metadata>
+	<layout title="COM_FJRELATED_VIEW_BLOG_TITLE" >
+		<message>
+			<![CDATA[COM_FJRELATED_BLOG_LAYOUT_DESC]]>
+		</message>
+		<help url="http://joomlacode.org/gf/project/freejoomla/wiki/?pagename=FJ+Related+Component+2011+Blog+Options" />
+	</layout>
+	
+
+	<fields name="params" addfieldpath="/administrator/components/com_fjrelated/fields" >
+		<fieldset name="required" label="COM_FJ_RELATED_REQUIRED">
+			<field name="COM_FJ_RELATED_REQUIRED_DESC" type="spacer" />
+			<field name="id" type="fjarticle" default="0" label="COM_FJRELATED_INTRO_ARTICLE"
+				description="COM_FJRELATED_ARTICLETOMATCH" />
+			<field name="keywords" type="textarea" rows="2" cols="30" default=""
+				label="COM_FJRELATED_Keywords" description="COM_FJRELATED_KEYWORDS_DESC" />
+		</fieldset>
+		<fieldset name="selection_options" label="COM_FJ_RELATED_SELECTION_OPTIONS">
+			<field name="layout_type" type="hidden" default="blog"
+			/>
+			<field name="anyOrAll" type="list" default="any"
+				label = "COM_FJRELATED_MATCH_ANY_ALL" description="COM_FJRELATED_ANYORALL">
+				<option value="any">COM_FJRELATED_Any</option>
+				<option value="all">JAll</option>
+				<option value="exact">COM_FJRELATED_Exact</option>
+			</field>
+			<field name="matchAuthor" type="radio" default="0"
+				label="COM_FJRELATED_Match_on_Author" description="COM_FJRELATED_AUTHORMATCH">
+				<option value="0">JNO</option>
+				<option value="1">JYES</option>
+			</field>
+			<field name="matchAuthorAlias" type="radio" default="0"
+				label="COM_FJRELATED_Match_on_Author_Alias" description="COM_FJRELATED_AUTHORALIASMATCH">
+				<option value="0">JNO</option>
+				<option value="1">JYES</option>
+			</field>
+			<field name="fjArticleState" type="sql" default="1" label="COM_FJRELATED_PUBLISHED_STATE"
+			multiple="multiple" description="COM_FJRELATED_PUBLISHED_STATE_DESC" size="2"
+			query="(SELECT '1' AS value, 'Published' as fjArticleState)
+					UNION
+					(SELECT '2' AS value, 'Archived' as fjArticleState)" />
+			<field name="catid" type="category" extension="com_content" 
+				default="" multiple="multiple" size="5" 
+				label="COM_FJRELATED_Select_Cats" description="COM_FJRELATED_Select_Cats_DESC"
+			 />
+			<field name="show_noauth" type="radio" default="0"
+				label="COM_FJRELATED_UNAUTH_LINKS" description="COM_FJRELATED_UNAUTH_LINKS_DESC">
+				<option value="0">JNO</option>
+				<option value="1">JYES</option>
+			</field>
+		</fieldset>
+		<fieldset name="blog_options" label="COM_FJ_RELATED_BLOG_OPTIONS">
+			<field name="showTitle" type="radio" default="0" label="COM_FJRELATED_Intro_Article_title"
+				description="COM_FJRELATED_Intro_Article_title_DESC">
+				<option value="0">JHide</option>
+				<option value="1">JShow</option>
+			</field>
+			<field name="showText" type="radio" default="0" label="COM_FJRELATED_INTRO_ARTICLE_TEXT"
+				description="COM_FJRELATED_INTRO_ARTICLE_TEXT_DESC">
+				<option value="0">JHide</option>
+				<option value="1">JShow</option>
+			</field>
+			<field name="num_leading_articles" type="text" size="3"
+				default="1" label="JGLOBAL_NUM_LEADING_ARTICLES_LABEL" description="JGLOBAL_NUM_LEADING_ARTICLES_DESC" />
+			<field name="num_intro_articles" type="text" size="3" default="4"
+				label="JGLOBAL_NUM_INTRO_ARTICLES_LABEL" description="JGLOBAL_NUM_INTRO_ARTICLES_DESC" />
+			<field name="num_columns" type="text" size="3" default="2"
+				label="JGLOBAL_NUM_COLUMNS_LABEL" description="JGLOBAL_NUM_COLUMNS_DESC" />
+			<field name="num_links" type="text" size="3" default="4"
+				label="JGLOBAL_NUM_LINKS_LABEL" description="JGLOBAL_NUM_LINKS_DESC" />
+			<field name="ordering" type="list" default="alpha" label="COM_FJRELATED_ORDERING"
+				description="COM_FJRELATED_ORDERING_DESC">
+				<option value="alpha">COM_FJRELATED_Title_Alphabetical</option>
+				<option value="rdate">COM_FJRELATED_Recently_Added_First</option>
+				<option value="date">COM_FJRELATED_Oldest_First</option>
+				<option value="bestmatch">COM_FJRELATED_Most_Matches_First</option>
+				<option value="article_order">COM_FJRELATED_Article_Manager_Order</option>
+			</field>
+			<field name="multi_column_order" type="radio" default="0"
+				label="JGLOBAL_MULTI_COLUMN_ORDER_LABEL" description="JGLOBAL_MULTI_COLUMN_ORDER_DESC">
+				<option value="0">JGLOBAL_DOWN</option>
+				<option value="1">JGLOBAL_ACROSS</option>
+			</field>
+			<field name="noRelatedText" type="text" default="" size="30"
+				label="COM_FJRELATED_NORELATEDTEXT" description="COM_FJRELATED_NORELATEDTEXT_DESC" />
+			<field name="show_pagination" type="list" default="1" label="COM_FJRELATED_PAGINATION"
+				description="COM_FJRELATED_PAGINATION_DESC">
+				<option value="0">JHide</option>
+				<option value="1">JShow</option>
+			</field>
+			<field name="show_pagination_results" type="radio" default="1"
+				label="COM_FJRELATED_PAGINATIONRESULTS" description="COM_FJRELATED_PAGINATIONRESULTS_DESC">
+				<option value="0">JHide</option>
+				<option value="1">JShow</option>
+			</field>
+			<field name="page_subheading" type="text"
+				description="JGLOBAL_SUBHEADING_DESC"
+				label="JGLOBAL_SUBHEADING_LABEL"
+				size="30"
+			/>
+		</fieldset>
+		<fieldset name="article_options" label="COM_FJ_RELATED_ARTICLE_OPTIONS">
+			<field name="link_to_fjrelated" type="radio" default="0"
+				label="COM_FJRELATED_LINK_TO" description="COM_FJRELATED_LINK_TO_DESC">
+				<option value="0">JNO</option>
+				<option value="1">JYES</option>
+			</field>
+			<field name="showMatchCount" type="radio" default="0"
+				label="COM_FJRELATED_KEYWORDCOUNT" description="COM_FJRELATED_KEYWORDCOUNT_DESC">
+				<option value="0">JHide</option>
+				<option value="1">JShow</option>
+			</field>
+			<field name="showMatchList" type="radio" default="0"
+				label="COM_FJRELATED_KEYWORDLIST" description="COM_FJRELATED_KEYWORDLIST_DESC">
+				<option value="0">JHide</option>
+				<option value="1">JShow</option>
+			</field>
+			<field name="show_title" type="list" default="1"
+				label="COM_FJRELATED_SHOWTITLE" description="COM_FJRELATED_SHOWTITLE_DESC">
+				<option value="0">JNO</option>
+				<option value="1">JYES</option>
+				<option value="use_article">COM_FJRELATED_USE_ARTICLE_SETTINGS</option>
+			</field>
+			<field name="link_titles" type="list" default="1" label="COM_FJRELATED_LINK_TITLES"
+				description="COM_FJRELATED_LINK_TITLES_DESC">
+				<option value="0">JNO</option>
+				<option value="1">JYES</option>
+				<option value="use_article">COM_FJRELATED_USE_ARTICLE_SETTINGS</option>
+			</field>
+
+			<field name="show_icons" type="list" default="1" label="COM_FJRELATED_SHOW_ICONS"
+				description="COM_FJRELATED_SHOW_ICONS_DESC">
+				<option value="0">JHide</option>
+				<option value="1">JShow</option>
+				<option value="use_article">COM_FJRELATED_USE_ARTICLE_SETTINGS</option>
+			</field>
+			<field name="show_print_icon" type="list" default="1" label="COM_FJRELATED_PRIN_ICON"
+				description="COM_FJRELATED_PRIN_ICON_DESC">
+				<option value="0">JHide</option>
+				<option value="1">JShow</option>
+				<option value="use_article">COM_FJRELATED_USE_ARTICLE_SETTINGS</option>
+			</field>
+			<field name="show_email_icon" type="list" default="1" label="COM_FJRELATED_EMAIL"
+				description="COM_FJRELATED_EMAIL_DESC">
+				<option value="0">JHide</option>
+				<option value="1">JShow</option>
+				<option value="use_article">COM_FJRELATED_USE_ARTICLE_SETTINGS</option>
+			</field>
+			<field name="show_vote" type="list" default="0"
+				label="COM_FJRELATED_Item_Rating_Voting" description="COM_FJRELATED_ITEM_RATING_VOTING_DESC">
+				<option value="0">JHide</option>
+				<option value="1">JShow</option>
+				<option value="use_article">COM_FJRELATED_USE_ARTICLE_SETTINGS</option>
+			</field>
+			<field name="show_category" type="list" default="1"
+				label="COM_FJRELATED_SHOW_CAT" description="COM_FJRELATED_SHOW_CAT_DESC">
+				<option value="0">JHide</option>
+				<option value="1">JShow</option>
+				<option value="use_article">COM_FJRELATED_USE_ARTICLE_SETTINGS</option>
+			</field>
+			<field name="link_category" type="list" default="1"
+				label="COM_FJRELATED_CATEGLINK" description="COM_FJRELATED_CATEGLINK_DESC">
+				<option value="0">JNO</option>
+				<option value="1">JYES</option>
+				<option value="use_article">COM_FJRELATED_USE_ARTICLE_SETTINGS</option>
+			</field>
+			<field name="show_create_date" type="list" default="1"
+				label="COM_FJRELATED_DATE_CREATED" description="COM_FJRELATED_DATE_CREATED_DESC">
+				<option value="0">JHide</option>
+				<option value="1">JShow</option>
+				<option value="use_article">COM_FJRELATED_USE_ARTICLE_SETTINGS</option>
+			</field>
+			<field name="show_modify_date" type="list" default="1"
+				label="COM_FJRELATED_DATE_MODIFIED" description="COM_FJRELATED_DATE_MODIFIED_DESC">
+				<option value="0">JHide</option>
+				<option value="1">JShow</option>
+				<option value="use_article">COM_FJRELATED_USE_ARTICLE_SETTINGS</option>
+			</field>
+			<field name="show_publish_date" type="list" default="1"
+				description="JGLOBAL_SHOW_PUBLISH_DATE_DESC"
+				label="JGLOBAL_SHOW_PUBLISH_DATE_LABEL"	>
+				<option value="0">JHIDE</option>
+				<option value="1">JSHOW</option>
+				<option value="use_article">COM_FJRELATED_USE_ARTICLE_SETTINGS</option>
+			</field>
+			<field name="show_author" type="list" default="1" label="COM_FJRELATED_AUTHOR_NAMES"
+				description="COM_FJRELATED_AUTHOR_NAMES_DESC">
+				<option value="0">JHide</option>
+				<option value="1">JShow</option>
+				<option value="use_article">COM_FJRELATED_USE_ARTICLE_SETTINGS</option>
+			</field>
+			<field name="show_hits" type="list" default="1" label="COM_FJRELATED_HITS"
+				description="COM_FJRELATED_HITS_DESC">
+				<option value="0">JHide</option>
+				<option value="1">JShow</option>
+				<option value="use_article">COM_FJRELATED_USE_ARTICLE_SETTINGS</option>
+			</field>
+			<field name="show_readmore" type="list" default="1"
+				label="COM_FJRELATED_Read_More_Link" description="COM_FJRELATED_Read_More_Link_DESC">
+				<option value="0">JHide</option>
+				<option value="1">JShow</option>
+				<option value="use_article">COM_FJRELATED_USE_ARTICLE_SETTINGS</option>
+			</field>
+		</fieldset>
+		<fieldset name="feed_options" label="COM_FJ_RELATED_FEED_OPTIONS">
+			<field name="show_feed_link" type="radio" default="1"
+				label="JGLOBAL_SHOW_FEED_LINK_LABEL" description="JGLOBAL_SHOW_FEED_LINK_DESC">
+				<option value="0">JNO</option>
+				<option value="1">JYES</option>
+			</field>
+			<field name="feed_summary" type="radio" default="0"
+				label="JGLOBAL_FEED_SUMMARY_LABEL" description="JGLOBAL_FEED_SUMMARY_DESC">
+				<option value="0">COM_FJRELATED_Intro_Text</option>
+				<option value="1">COM_FJRELATED_FULL_TEXT</option>
+			</field>
+		
+		</fieldset>
+	</fields>
+</metadata>

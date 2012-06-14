@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE install SYSTEM "component-install.dtd">
+<!--  <!DOCTYPE install SYSTEM "http://www.joomla.org/xml/dtd/1.5/component-install.dtd"> -->
+<extension method="upgrade" type="component" version="1.6.0">
+	<name>com_fjrelated</name>
+	<creationDate>August 2011</creationDate>
+	<author>Mark Dexter</author>
+	<authorEmail>dextercowley@gmail.com</authorEmail>
+	<authorUrl>www.joomla.org</authorUrl>
+	<copyright>(C) 2008 - 2011 Mark Dexter. Portions Copyright(C) Open Source Matters. All rights reserved.</copyright>
+	<license>http://www.gnu.org/licenses/gpl.html</license>
+	<version>1.03</version>
+	<description>COM_FJRELATED_LAYOUT_DESC</description>
+	<installfile/>
+	<uninstallfile/>
+	<files folder="site">
+		<filename>controller.php</filename>
+		<filename>fjrelated.php</filename>
+		<filename>index.html</filename>
+		<filename>router.php</filename>
+		<folder>helpers</folder>
+		<folder>models</folder>
+		<folder>views</folder>
+		<folder>language</folder>
+	</files>
+	<administration>
+		<files folder="admin">
+   			<filename>fjrelated.php</filename>
+			<filename>index.html</filename>
+			<folder>fields</folder>
+			<folder>language</folder>
+		</files>
+	</administration>
+
+</extension>
