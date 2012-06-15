@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project name="FJ Related Layout" basedir="." default="create_zip">
+<project name="fj-related-comp-2011" basedir="." default="create_zip">
 
 	<property name="src" value="${project.basedir}" override="true" />
 	<fileset dir="${src}" id="allfiles">
