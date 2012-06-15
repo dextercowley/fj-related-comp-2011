@@ -98,11 +98,11 @@ class FJRelatedViewFJRelated extends JView
 		}
 		$document->setTitle( $params->get( 'page_title' ) );
 
-		if ($article->metadesc) {
-			$document->setDescription( $article->metadesc );
-		}
-		if ($article->metakey) {
-			$document->setMetadata('keywords', $article->metakey);
+		if ($params->get('menu-meta_description')) {
+            $document->setDescription($params->get('menu-meta_description'));
+        }
+		if ($params->get('menu-meta_keywords')) {
+			$document->setMetadata('keywords', $params->get('menu-meta_keywords'));
 		}
 
 		// Get some data from the model
