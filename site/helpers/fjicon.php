@@ -29,12 +29,12 @@ class JHTMLFJIcon
 		return str_replace('com_fjrelated','com_content',$return);
 	}
 
-	function email($article, $params)
+	static function email($article, $params)
 	{
 		return JHTMLIcon::email($article, $params, $attribs = array());
 	}
 
-	function edit($article, $params, $attribs = array())
+	static function edit($article, $params, $attribs = array())
 	{
 		// Initialise variables.
 		$user	= JFactory::getUser();
@@ -89,13 +89,13 @@ class JHTMLFJIcon
 	}
 
 
-	function print_popup($article, $params, $attribs = array())
+	static function print_popup($article, $params, $attribs = array())
 	{
 		$return = JHTMLIcon::print_popup($article, $params, $attribs = array());
 		return str_replace('com_fjrelated', 'com_content', $return);
 	}
 
-	function print_screen($article, $params, $access, $attribs = array())
+	static function print_screen($article, $params, $access, $attribs = array())
 	{
 		return JHTMLIcon::print_screen($article, $params, $attribs = array());
 	}
