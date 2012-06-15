@@ -170,7 +170,7 @@ class FJRelatedModelFJRelated extends JModelList
 			$article->cat_access	= null;
 			$article->author		= null;
 			$article->created_by	= $user->get('id');
-			$article->parameters	= new JParameter( '' );
+			$article->parameters	= new JRegistry();
 			$article->text			= '';
 			$app = JFactory::getApplication();
 			$params = $app->getParams();
