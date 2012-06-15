@@ -1,6 +1,5 @@
-<?php 
+<?php
 /**
- * @version		$Id: default_items.php 131 2011-05-20 23:08:04Z dextercowley $
  * @package		Site
  * @subpackage	com_fjrelated
  * @copyright	Copyright (C) 2009 - 2010 Mark Dexter. Portions Copyright(C) Open Source Matters, Inc. All rights reserved.
@@ -31,7 +30,7 @@ switch ($params->get('list_show_date'))
 		$dateOrder = 'a.created';
 		break;
 }
-	
+
 $n			= count($this->items);
 $listOrder	= $this->escape($this->state->get('list.ordering'));
 $listDirn	= $this->escape($this->state->get('list.direction'));
@@ -49,7 +48,7 @@ $filter 	= JRequest::getString('filter-search', '');
 <form action="<?php echo JFilterOutput::ampReplace(JFactory::getURI()->toString()); ?>" method="post" name="adminForm" id="adminForm">
 	<?php if ($this->params->get('show_headings') || $this->params->get('filter_type') != 'none' || $this->params->get('show_pagination_limit')) :?>
 	<fieldset class="filters">
-		<?php if ($this->params->get('filter_type') != 'none') :?>	
+		<?php if ($this->params->get('filter_type') != 'none') :?>
 		<legend class="hidelabeltxt">
 			<?php echo JText::_('JGLOBAL_FILTER_LABEL'); ?>
 		</legend>
@@ -66,7 +65,7 @@ $filter 	= JRequest::getString('filter-search', '');
 			<?php echo $this->pagination->getLimitBox(); ?>
 		</div>
 		<?php endif; ?>
-		
+
 		<input type="hidden" name="filter_order" value="" />
 		<input type="hidden" name="filter_order_Dir" value="" />
 		<input type="hidden" name="limitstart" value="" />
@@ -129,7 +128,7 @@ $filter 	= JRequest::getString('filter-search', '');
 							<a href="<?php echo JRoute::_(ContentHelperRoute::getArticleRoute($article->slug, $article->catid)); ?>">
 						<?php endif; ?>
 						<?php echo $this->escape($article->title); ?></a>
-						
+
 						<?php if ($article->params->get('access-edit')) : ?>
 						<ul class="actions">
 							<li class="edit-icon">

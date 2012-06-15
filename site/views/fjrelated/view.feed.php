@@ -1,6 +1,5 @@
 <?php
 /**
- * @version		$Id: view.feed.php 122 2011-05-19 00:26:15Z dextercowley $
  * @package		com_fjrelated_plus
  * @copyright	Copyright (C) 2008 Mark Dexter. Portions Copyright Open Source Matters. All rights reserved.
  * @license		http://www.gnu.org/licenses/gpl.html

@@ -1,6 +1,5 @@
 <?php
 /**
- * @version		$Id: fjrelated.php 278 2011-08-23 03:20:02Z dextercowley $
  * @package		com_fjrelated_plus
  * @copyright	Copyright (C) 2008 Mark Dexter. Portions Copyright Open Source Matters. All rights reserved.
  * @license		http://www.gnu.org/licenses/gpl.html
@@ -384,7 +383,7 @@ class FJRelatedModelFJRelated extends JModelList
 				$key = trim($key);
 				if ($key) {
 					// surround with commas so first and last items have surrounding commas
-					$likes[] = ',' . $this->_db->getEscaped($key) . ','; 
+					$likes[] = ',' . $this->_db->getEscaped($key) . ',';
 				}
 			}
 			$ordering 	= $params->get('ordering', 'alpha');
@@ -636,7 +635,7 @@ class FJRelatedModelFJRelated extends JModelList
 				// First, let's set the access parameters
 				$row->access_allowed = in_array($row->access, $groups) && in_array($row->cat_access, $groups);
 				$row->access_edit = false;
-				
+
 				// Compute the asset access permissions.
 				// Technically guest could edit an article, but lets not check that to improve performance a little.
 				if (!$user->get('guest')) {
@@ -654,7 +653,7 @@ class FJRelatedModelFJRelated extends JModelList
 						}
 					}
 				}
-				
+
 				// get display date
 				switch ($params->get('list_show_date'))
 				{
@@ -671,13 +670,13 @@ class FJRelatedModelFJRelated extends JModelList
 						$row->displayDate = $row->created;
 						break;
 				}
-				
+
 				// Next, let's process the link_to_fjrelated
 				$row->fjrelated_link = '';
 				if (($linkToFJRelated) && ($relatedLink = $this->getRelatedLayoutLink($row->id, $layoutType))) {
 					$row->fjrelated_link = JRoute::_($relatedLink); // link to layout
 				}
-				
+
 				// Next process any use_article values in the options (only if we are in a blog)
 				$articleParams = new JRegistry($row->attribs);
 				$row->params = clone $params;
@@ -706,14 +705,14 @@ class FJRelatedModelFJRelated extends JModelList
 					// For non-blog layouts, merge all of the article params
 					$row->params->merge($articleParams);
 				}
-				
+
 				// count the number of keyword matches (skip if not required based on parameter settings)
 				if (($showMatchList) || ($showCount) || ($orderBy == 'bestmatch'))
 				{
 					if (trim($row->metakey)) {
 						// create array of current article's keyword phrases
 						$rowkeywords = explode(',', trim($row->metakey));
-							
+
 						foreach ($rowkeywords as $keyword ) // loop through each keyword phrase of this related article
 						{
 							foreach ($keys as $nextkey) // loop through each keyword phrase of the main article
@@ -910,12 +909,12 @@ class FJRelatedModelFJRelated extends JModelList
 		}
 
 		$this->setState('layout', JRequest::getCmd('layout'));
-		
+
 		// Optional filter text
 		$this->setState('list.filter', JRequest::getString('filter-search'));
 
 		$this->setState('list.start', JRequest::getVar('limitstart', 0, '', 'int'));
-		
+
 	}
 
 }

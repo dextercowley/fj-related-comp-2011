@@ -1,6 +1,5 @@
 <?php
 /**
- * @version		$Id: view.html.php 277 2011-08-23 02:57:33Z dextercowley $
  * @package		com_fj_related
  * @copyright	Copyright (C) 2008-2011 Mark Dexter. Portions Copyright Open Source Matters. All rights reserved.
  * @license		http://www.gnu.org/licenses/gpl.html
@@ -87,7 +86,7 @@ class FJRelatedViewFJRelated extends JView
 
 
 
-		
+
 		JRequest::setVar('limit', (int) $limit);
 
 		$contentConfig = JComponentHelper::getParams('com_content');
@@ -136,7 +135,7 @@ class FJRelatedViewFJRelated extends JView
 		} else {
 			$pagination = new JPagination($total, $limitstart, $limit);
 		}
-		
+
 		// Compute the article slugs and prepare introtext (runs content plugins).
 		foreach ($items as $i => & $item)
 		{

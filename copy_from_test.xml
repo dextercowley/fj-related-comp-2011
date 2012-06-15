@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project name="FJ Related Layout" default="copy_all" basedir=".">
+<project name="fj-related-comp-2011" default="copy_all" basedir=".">
 	<property name="src" value="." />
-	<property name="test" value="../fj_test_16" />
+	<property name="test" value="../fj-test" />
 	<target name="copy_all" description="Copies files from test project.">
 		<echo message="Copying FJ Related Layout files from test to dev..." />
 		<copy file="${test}/administrator/components/com_fjrelated/fields/fjarticle.php"

@@ -1,6 +1,5 @@
 <?php
 /**
- * @version		$Id: blog.php 111 2011-05-06 22:05:49Z dextercowley $
  * @package		com_fj_related
  * @copyright	Copyright (C) 2008-2011 Mark Dexter. Portions Copyright Open Source Matters. All rights reserved.
  * @license		http://www.gnu.org/licenses/gpl.html
@@ -33,7 +32,7 @@ $pageClass = $this->params->get('pageclass_sfx');
 	<?php echo JHtml::_('content.prepare', $this->article->text); ?>
 	<div class="clr"></div>
 	</div>
-<?php endif; ?>	
+<?php endif; ?>
 <?php if (!$this->total && $this->params->get('noRelatedText')) :?>
 	<div class="no_related"><p>
 	<?php echo $this->escape($this->params->get('noRelatedText'));?>

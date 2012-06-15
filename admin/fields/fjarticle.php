@@ -1,6 +1,5 @@
 <?php
 /**
- * @version		$Id: fjarticle.php 136 2011-05-21 17:44:48Z dextercowley $
  * @copyright	Copyright (C) 2005 - 2010 Open Source Matters, Inc. All rights reserved.
  * @license		GNU General Public License version 2 or later; see LICENSE.txt
  */
@@ -64,7 +63,7 @@ class JFormFieldFJArticle extends JFormField
 		if ($error = $db->getErrorMsg()) {
 			JError::raiseWarning(500, $error);
 		}
-		
+
 		$noArticle = JText::_('COM_FJ_RELATED_NO_ARTICLE');
 
 		if (empty($title)) {
@@ -83,9 +82,9 @@ class JFormFieldFJArticle extends JFormField
 		$html[] = '	<a class="modal" title="'.JText::_('COM_FJ_RELATED_CHANGE_ARTICLE_DESC').'"  href="'.$link.'" rel="{handler: \'iframe\', size: {x: 800, y: 450}}">'.JText::_('COM_FJ_RELATED_CHANGE_ARTICLE').'</a>';
 		$html[] = '  </div>';
 		$html[] = '</div>';
-		
+
 		// The article clear button.
-		$html[] = "<div class=\"button2-left\"><div class=\"blank\"><a title=\"".JText::_('COM_FJ_RELATED_NO_ARTICLE_DESC')."\" href=\"#\" onclick=\"jSelectArticle_jform_params_id('', '".$noArticle."', '');\">" 
+		$html[] = "<div class=\"button2-left\"><div class=\"blank\"><a title=\"".JText::_('COM_FJ_RELATED_NO_ARTICLE_DESC')."\" href=\"#\" onclick=\"jSelectArticle_jform_params_id('', '".$noArticle."', '');\">"
 			. JText::_( 'COM_FJ_RELATED_RESET' ) ." </a></div></div>";
 
 		// The active article id field.

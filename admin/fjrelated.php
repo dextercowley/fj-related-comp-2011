@@ -1,6 +1,5 @@
-<?php 
+<?php
 /**
- * @version		$Id: fjrelated.php 137 2011-05-21 17:51:23Z dextercowley $
  * @package		com_fjrelated
  * @copyright	Copyright (C) 2008 - 2011 Mark Dexter. Portions Copyright Open Source Matters. All rights reserved.
  * @license		http://www.gnu.org/licenses/gpl.html
@@ -13,7 +12,7 @@ defined('_JEXEC') or die( 'Restricted access' );
 ?>
 <h1><?php echo JText::_('COM_FJRELATED_ARTICLES_COMPONENT_HELP');?></h1>
 <h2><?php echo JText::_('COM_FJRELATED_Introduction');?></h2>
-<p><?php echo JText::_('FJRC1');?> 
+<p><?php echo JText::_('FJRC1');?>
 <a href="http://joomlacode.org/gf/project/freejoomla/wiki/?pagename=FJ+Related+Articles+Component+2011"
 target="_blank">
 <?php echo JText::_('FJRC2');?></a>.</p>

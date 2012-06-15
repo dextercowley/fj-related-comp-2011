@@ -1,6 +1,5 @@
 <?php
 /**
- * @version		$Id: router.php 99 2011-05-03 22:49:23Z dextercowley $
  * @copyright	Copyright (C) 2011 Mark Dexter. All rights reserved.
  * @license		GNU General Public License version 2 or later; see LICENSE.txt
  */
